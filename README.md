@@ -18,7 +18,7 @@ The respective base classes for these four components are:
 4.  KeyboardEncoder.cs
 
 To create a custom terminal emulator, you can subclass any or all of these base classes as necessary to accommodate the requirements of the host.
-Then create a subclass of VirtualTerminal.cs made from the components.
+Then create a subclass of VirtualTerminal.cs made from your components.
 
 VT100.cs is a fully functional virtual terminal that I created for a specific application.  It's mostly compliant with the VT100 standard, but does not
 implement the entire VT100 specification.
