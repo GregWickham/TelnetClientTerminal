@@ -1,0 +1,6 @@
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\bin\Release\Console_NetworkAccess.dll
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\bin\Release\Console_NetworkAccess.pdb
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\obj\Release\Console_NetworkAccess.csprojAssemblyReference.cache
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\obj\Release\Console_NetworkAccess.csproj.CoreCompileInputs.cache
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\obj\Release\Console_NetworkAccess.dll
+C:\Users\gregw\source\repos\Statecraft\Console_NetworkAccess\obj\Release\Console_NetworkAccess.pdb

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <IntermediateOutputPath>..\build\$(Configuration)\libvt100\</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\build\$(Configuration)\libvt100\</BaseIntermediateOutputPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1207872C-AD4D-4EEE-B222-B55904B6D488}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleTerminalEmulation</RootNamespace>
+    <AssemblyName>ConsoleTerminalEmulation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Decoding\Wyse60Decoder.cs" />
+    <Compile Include="Display\AnsiCompatibleDisplay.cs" />
+    <Compile Include="Decoding\AnsiDecoder.cs" />
+    <Compile Include="Decoding\EscapeCharacterDecoder.cs" />
+    <Compile Include="Display\VT100Display.cs" />
+    <Compile Include="Keyboard\KeyboardEncoder_rxvt.cs" />
+    <Compile Include="Keyboard\KeyboardEncoder.cs" />
+    <Compile Include="Virtual Terminal\VirtualTerminal.cs" />
+    <Compile Include="Decoding\TerminalDecoder.cs" />
+    <Compile Include="Display\TerminalDisplay.cs" />
+    <Compile Include="Virtual Terminal\VT100.cs" />
+    <Compile Include="Decoding\VT100Decoder.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Virtual Terminal\WYSE60.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Console_NetworkAccess\Console_NetworkAccess.csproj">
+      <Project>{887e2615-687f-43a5-b35f-27d42ae89be1}</Project>
+      <Name>Console_NetworkAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="SpicNSpan" AfterTargets="Clean">
+    <!-- bin -->
+    <RemoveDir Directories="$(TargetDir)" />
+    <!-- obj -->
+    <RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" />
+  </Target>
+</Project>
